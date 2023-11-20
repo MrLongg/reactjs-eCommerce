@@ -1,0 +1,94 @@
+// CSS chung
+.wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+// CSS phần Arrow của Slide
+.arrow {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #fff7f7;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 2;
+
+    &.arrow-left {
+        left: 10px;
+    }
+
+    &.arrow-right {
+        right: 10px;
+    }
+}
+
+// CSS phần Slide
+.container {
+    display: flex;
+    height: 100%;
+    transition: all 1s ease;
+    transform: translateX(calc(var(--slideIndex) * -100vw));
+}
+
+.slide {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+
+    &.first {
+        background-color: #f5fafd;
+    }
+
+    &.second {
+        background-color: #fcf1ed;
+    }
+
+    &.third {
+        background-color: #fbf0f4;
+    }
+}
+
+.image-container {
+    flex: 1;
+    height: 100%;
+}
+
+.image {
+    height: 80%;
+}
+
+// CSS phần Info
+.info-container {
+    flex: 1;
+    padding: 50px;
+}
+
+.title {
+    font-size: 7rem;
+}
+
+.description {
+    margin: 50px 0;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.button {
+    padding: 10px;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+}

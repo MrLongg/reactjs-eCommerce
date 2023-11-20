@@ -1,0 +1,63 @@
+// CSS lớn
+.wrapper {
+    height: 60px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+// CSS Left
+.left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.language {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-left: 25px;
+    border: 0.5px solid lightgrey;
+}
+
+.input {
+    border: none;
+}
+
+.search-icon {
+    color: gray;
+}
+
+// CSS Center
+.center {
+    text-align: center;
+    flex: 1;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+// CSS Right
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.menu-item {
+    font-size: 1.4rem;
+    margin-left: 25px;
+    cursor: pointer;
+}

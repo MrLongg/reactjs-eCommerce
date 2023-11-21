@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Slider.module.scss';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import { sliderItems } from '../SliderItem/SliderItem';
+import { sliderItems } from '../Data/Data';
 
 const cx = classNames.bind(styles);
 
@@ -18,14 +18,14 @@ function Slider() {
         }
     };
 
-    // Logic for automatic slide change
+    // Logic lướt Slide tự động
     useEffect(() => {
         const interval = setInterval(() => {
             setSlideIndex((prevIndex) => (prevIndex < sliderItems.length - 1 ? prevIndex + 1 : 0));
-        }, 5000); // Change slide every 3 seconds (3000 milliseconds)
+        }, 5000);
 
-        return () => clearInterval(interval); // Clean up the interval on component unmount
-    }, [sliderItems.length]);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className={cx('wrapper')}>

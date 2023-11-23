@@ -47,7 +47,7 @@ export const popularProducts = [
     },
     {
         id: 2,
-        img: 'https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388',
+        img: 'https://ih1.redbubble.net/image.785214713.7911/ssrco,classic_tee,mens,101010:01c5ca27c6,front_alt,square_product,600x600.u1.jpg',
     },
     {
         id: 3,
@@ -55,7 +55,7 @@ export const popularProducts = [
     },
     {
         id: 4,
-        img: 'https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png',
+        img: 'https://image.spreadshirtmedia.com/image-server/v1/mp/products/T210A2MPA4301PT17X2Y49D11696618W32893H32893/views/1,width=800,height=800,appearanceId=2,backgroundColor=F2F2F2,modelId=1543,crop=list/3d-space-cat-hoodie-womens-mens-t-shirt.jpg',
     },
     {
         id: 5,
@@ -67,10 +67,18 @@ export const popularProducts = [
     },
     {
         id: 7,
-        img: 'https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png',
+        img: 'https://fantucci.com/wp-content/uploads/2018/03/0247_Moon_Front_Navy.jpg',
     },
     {
         id: 8,
         img: 'https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png',
+    },
+    {
+        id: 9,
+        img: 'https://vangogh.teespring.com/v3/image/6xFnWyVOpHlr1FW1IGft9ZWMYI4/480/560.jpg',
+    },
+    {
+        id: 10,
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTcxzmhBrcjLlIEWu4SAH37yXGFHxQDEmAw&usqp=CAU',
     },
 ];

@@ -1,0 +1,96 @@
+// CSS Chung
+.wrapper {
+    display: flex;
+}
+
+// CSS Left
+.left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+
+// CSS Logo
+.logo {
+}
+
+// CSS Description
+.description {
+    margin: 20px 0;
+}
+
+// CSS Social Media
+.social-media {
+    display: flex;
+}
+
+// CSS Social Icon
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+
+    &.facebook {
+        background-color: #3b5999;
+    }
+
+    &.twitter {
+        background-color: #55acee;
+    }
+
+    &.instagram {
+        background-color: #e4405f;
+    }
+}
+
+// CSS Center
+.center {
+    flex: 1;
+    padding: 20px;
+}
+
+// CSS Title
+.title {
+    margin-bottom: 30px;
+}
+
+// CSS List
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// CSS List-item
+.list-item {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+// CSS Right
+.right {
+    flex: 1;
+    padding: 20px;
+}
+
+// CSS Contact-item
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+// CSS Contact-icon
+.contact-icon {
+    margin-right: 10px;
+}
+
+// CSS Payment
+.payment {
+    width: 50%;
+}

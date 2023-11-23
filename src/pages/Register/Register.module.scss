@@ -1,0 +1,55 @@
+// CSS Chung
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        url('https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+            center;
+    background-size: cover;
+}
+
+// CSS Container
+.container {
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+}
+
+// CSS Title
+.title {
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+// CSS Form
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// CSS Form input
+.form-input {
+    flex: 1;
+    min-width: 40%;
+    margin: 20px 10px 0 0;
+    padding: 10px;
+}
+
+// CSS Agreement
+.agreement {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+// CSS Button
+.button {
+    width: 40%;
+    border: none;
+    padding: 15px 20px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}

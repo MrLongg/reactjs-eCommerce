@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Slider.module.scss';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import { sliderItems } from '../Data/Data';
+import { sliderItems } from '../../data/Data';
 
 const cx = classNames.bind(styles);
 

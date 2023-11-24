@@ -1,4 +1,4 @@
-// CSS chung
+/* CSS chung */
 .wrapper {
     display: flex;
     position: relative;
@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-// CSS phần Arrow của Slide
+/* CSS phần arrow của slide */
 .arrow {
     display: flex;
     position: absolute;
@@ -33,7 +33,7 @@
     }
 }
 
-// CSS phần Slide
+/* CSS phần Slide */
 .container {
     display: flex;
     height: 100%;
@@ -69,7 +69,6 @@
     height: 80%;
 }
 
-// CSS phần Info
 .info-container {
     flex: 1;
     padding: 50px;
@@ -91,4 +90,11 @@
     font-size: 2rem;
     background-color: transparent;
     cursor: pointer;
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .wrapper {
+        display: none;
+    }
 }

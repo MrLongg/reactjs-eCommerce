@@ -1,36 +1,41 @@
-// CSS Chung
-.wrapper {
-}
-
-// CSS Title
 .title {
     margin: 20px;
 }
 
-// CSS filter-container
+/* CSS filter-container */
 .filter-container {
     display: flex;
     justify-content: space-between;
 }
 
-// CSS Filter
 .filter {
     margin: 20px;
 }
 
-// CSS Filter-text
 .filter-text {
     font-size: 2rem;
     font-weight: 600;
     margin-right: 20px;
 }
 
-// CSS Selection
 .selection {
     padding: 5px;
     margin-right: 20px;
 }
 
-// CSS Select-option
-.select-option {
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .filter {
+        display: flex;
+        flex-direction: column;
+        width: 0 20px;
+    }
+
+    .filter-text {
+        margin: 0;
+    }
+
+    .selection {
+        margin: 10px 0;
+    }
 }

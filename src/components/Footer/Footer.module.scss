@@ -1,9 +1,9 @@
-// CSS Chung
+/* CSS Chung */
 .wrapper {
     display: flex;
 }
 
-// CSS Left
+/* CSS Left */
 .left {
     display: flex;
     flex-direction: column;
@@ -11,21 +11,14 @@
     padding: 20px;
 }
 
-// CSS Logo
-.logo {
-}
-
-// CSS Description
 .description {
     margin: 20px 0;
 }
 
-// CSS Social Media
 .social-media {
     display: flex;
 }
 
-// CSS Social Icon
 .social-icon {
     display: flex;
     align-items: center;
@@ -49,48 +42,57 @@
     }
 }
 
-// CSS Center
+/* CSS Center */
 .center {
     flex: 1;
     padding: 20px;
 }
 
-// CSS Title
 .title {
     margin-bottom: 30px;
 }
 
-// CSS List
 .list {
     display: flex;
     flex-wrap: wrap;
 }
 
-// CSS List-item
 .list-item {
     width: 50%;
     margin-bottom: 10px;
 }
 
-// CSS Right
+/* CSS Right */
 .right {
     flex: 1;
     padding: 20px;
 }
 
-// CSS Contact-item
 .contact-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-// CSS Contact-icon
 .contact-icon {
     margin-right: 10px;
 }
 
-// CSS Payment
 .payment {
     width: 50%;
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .center {
+        display: none;
+    }
+
+    .right {
+        background-color: #fff8f8;
+    }
 }

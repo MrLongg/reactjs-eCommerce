@@ -3,6 +3,7 @@ import styles from './Cart.module.scss';
 import Navbar from '../../components/Navbar/Navbar';
 import Announcement from '../../components/Annoucement/Announcement';
 import Footer from '../../components/Footer/Footer';
+import { Add, Remove } from '@mui/icons-material';
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +13,7 @@ function Cart() {
             <Navbar />
             <Announcement />
             <div className={cx('container')}>
-                <h1 className={cx('title')}>Your Cart</h1>
+                <h1 className={cx('cart-title')}>Your Cart</h1>
                 <div className={cx('top')}>
                     <button className={cx('top-button')}>CONTINUE SHOPPING</button>
                     <div className={cx('top-texts')}>
@@ -39,14 +40,72 @@ function Cart() {
                                     </span>
                                     <span className={cx('product-color', 'black')}></span>
                                     <span className={cx('product-size')}>
-                                        <b>Size: </b> 37.5
+                                        <b>Size: </b> L
                                     </span>
                                 </div>
                             </div>
-                            <div className={cx('price-detail')}>Price</div>
+                            <div className={cx('price-detail')}>
+                                <div className={cx('product-amount-container')}>
+                                    <Add />
+                                    <div className={cx('product-amount')}>2</div>
+                                    <Remove />
+                                </div>
+                                <div className={cx('product-prize')}>$ 30</div>
+                            </div>
+                        </div>
+
+                        <hr className={cx('break-line')} />
+
+                        <div className={cx('product')}>
+                            <div className={cx('product-detail')}>
+                                <img
+                                    className={cx('product-img')}
+                                    src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png"
+                                    alt=""
+                                />
+                                <div className={cx('details')}>
+                                    <span className={cx('product-name')}>
+                                        <b>Product:</b> HAKURA T-SHIRT
+                                    </span>
+                                    <span className={cx('product-id')}>
+                                        <b>ID:</b> 88748347123
+                                    </span>
+                                    <span className={cx('product-color', 'gray')}></span>
+                                    <span className={cx('product-size')}>
+                                        <b>Size: </b> M
+                                    </span>
+                                </div>
+                            </div>
+                            <div className={cx('price-detail')}>
+                                <div className={cx('product-amount-container')}>
+                                    <Add />
+                                    <div className={cx('product-amount')}>2</div>
+                                    <Remove />
+                                </div>
+                                <div className={cx('product-prize')}>$ 20</div>
+                            </div>
                         </div>
                     </div>
-                    <div className={cx('summary')}>sumaary</div>
+                    <div className={cx('summary')}>
+                        <h1 className={cx('summary-title')}>ORDER SUMMARY</h1>
+                        <div className={cx('summary-item')}>
+                            <span className={cx('summary-item-text')}>Subtotal</span>
+                            <span className={cx('summary-item-price')}>$ 80</span>
+                        </div>
+                        <div className={cx('summary-item')}>
+                            <span className={cx('summary-item-text')}>Estimated Shipping: </span>
+                            <span className={cx('summary-item-price')}>$ 5.90</span>
+                        </div>
+                        <div className={cx('summary-item')}>
+                            <span className={cx('summary-item-text')}>Shipping Discount</span>
+                            <span className={cx('summary-item-price')}>$ -5.90</span>
+                        </div>
+                        <div className={cx('summary-item', 'total')}>
+                            <span className={cx('summary-item-text')}>Total</span>
+                            <span className={cx('summary-item-price')}>$ 80</span>
+                        </div>
+                        <button className={cx('checkout-button')}>CHECKOUT NOW</button>
+                    </div>
                 </div>
             </div>
             <Footer />

@@ -1,4 +1,4 @@
-// CSS Chung
+/* CSS Chung */
 .wrapper {
     display: flex;
     align-items: center;
@@ -8,20 +8,18 @@
     flex-direction: column;
 }
 
-// CSS Title
 .title {
     margin: 20px;
     font-size: 7rem;
 }
 
-// CSS Description
 .description {
     font-size: 2.4rem;
     font-weight: 300;
     margin-bottom: 20px;
 }
 
-// CSS Input Container
+/* CSS Input Container */
 .input-container {
     display: flex;
     justify-content: space-between;
@@ -31,17 +29,26 @@
     border: 1px solid lightgray;
 }
 
-// CSS Input
 .input {
     border: none;
     flex: 8;
     padding-left: 20px;
 }
 
-// CSS Button
 .button {
     flex: 1;
     border: none;
     background-color: teal;
     color: white;
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .description {
+        text-align: center;
+    }
+
+    .input-container {
+        width: 80%;
+    }
 }

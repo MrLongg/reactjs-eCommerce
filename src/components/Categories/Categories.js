@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Categories.module.scss';
-import { categories } from '../Data/Data';
+import { categories } from '../../data/Data';
 import CategoryItem from '../CategoryItem/CategoryItem';
 
 const cx = classNames.bind(styles);

@@ -1,19 +1,14 @@
-// CSS Chung
-.wrapper {
-}
-
-// CSS container
+/* CSS container */
 .container {
     padding: 20px;
 }
 
-// CSS Title
-.title {
+.cart-title {
     font-weight: 300;
     text-align: center;
 }
 
-// CSS Top
+/* CSS Top */
 .top {
     display: flex;
     padding: 20px;
@@ -21,7 +16,6 @@
     justify-content: space-between;
 }
 
-// CSS Top button
 .top-button {
     padding: 10px;
     font-weight: 600;
@@ -35,51 +29,37 @@
     }
 }
 
-// CSS Top texts
-.top-texts {
-}
-
-// CSS Top text
 .top-text {
     margin: 0 10px;
     text-decoration: underline;
     cursor: pointer;
 }
 
-// CSS Bottom
+/* CSS Bottom */
 .bottom {
     display: flex;
     justify-content: space-between;
 }
 
-// CSS Info
 .info {
     flex: 3;
 }
 
-// CSS Summary
-.summary {
-    flex: 1;
-}
-
-// CSS Product
 .product {
     display: flex;
+    margin-top: 5px;
     justify-content: space-between;
 }
 
-// CSS product detail
 .product-detail {
     display: flex;
     flex: 2;
 }
 
-// CSS product img
 .product-img {
     width: 200px;
 }
 
-// CSS details
 .details {
     display: flex;
     flex-direction: column;
@@ -87,15 +67,6 @@
     padding: 20px;
 }
 
-// CSS product name
-.product-name {
-}
-
-// CSS Product id
-.product-id {
-}
-
-// CSS Product color
 .product-color {
     width: 20px;
     height: 20px;
@@ -104,17 +75,98 @@
     &.black {
         background-color: black;
     }
+
+    &.gray {
+        background-color: gray;
+    }
 }
 
-// CSS product size
-.product-size {
-}
-
-// CSS Price detail
 .price-detail {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex: 1;
+}
+
+.product-amount-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-amount {
+    font-size: 2.4rem;
+    margin: 5px;
+}
+
+.product-prize {
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+/* CSS Break line */
+.break-line {
+    background-color: #eee;
+    border: none;
+    height: 1px;
+}
+
+/* CSS Summary */
+.summary {
+    flex: 1;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    // height: 50vh;
+}
+
+.summary-title {
+    font-weight: 200;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+
+    &.total {
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .container {
+        padding: 10px;
+    }
+
+    .top-texts {
+        display: none;
+    }
+
+    .bottom {
+        flex-direction: column;
+    }
+
+    .product {
+        flex-direction: column;
+    }
+
+    .product-amount {
+        margin: 5px 15px;
+    }
+
+    .product-prize {
+        margin-bottom: 20px;
+    }
 }

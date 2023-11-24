@@ -1,4 +1,4 @@
-// CSS Chung
+/* CSS Chung */
 .wrapper {
     display: flex;
     align-items: center;
@@ -11,26 +11,23 @@
     background-size: cover;
 }
 
-// CSS Container
+/* CSS Container */
 .container {
     width: 25%;
     padding: 20px;
     background-color: white;
 }
 
-// CSS Title
 .title {
     font-size: 2.4rem;
     font-weight: 300;
 }
 
-// CSS Form
 .form {
     display: flex;
     flex-direction: column;
 }
 
-// CSS Form input
 .form-input {
     flex: 1;
     min-width: 40%;
@@ -38,7 +35,6 @@
     padding: 10px;
 }
 
-// CSS Button
 .button {
     width: 40%;
     border: none;
@@ -49,10 +45,15 @@
     cursor: pointer;
 }
 
-// CSS Link
 .link {
     margin: 5px 0;
     font-size: 1.2rem;
-    // text-decoration: underline;
     cursor: pointer;
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .container {
+        width: 75%;
+    }
 }

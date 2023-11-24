@@ -1,4 +1,4 @@
-// CSS Chung
+/* CSS Chung */
 .wrapper {
     display: flex;
     align-items: center;
@@ -16,7 +16,6 @@
     }
 }
 
-// CSS Circle
 .circle {
     width: 200px;
     height: 200px;
@@ -25,13 +24,12 @@
     position: absolute;
 }
 
-// CSS Image
 .img {
     height: 75%;
     z-index: 2;
 }
 
-// CSS Info
+/* CSS Info */
 .info {
     display: flex;
     align-items: center;
@@ -47,7 +45,6 @@
     transition: opacity 0.5s ease;
 }
 
-// CSS Icon
 .icon {
     display: flex;
     align-items: center;
@@ -63,5 +60,12 @@
     &:hover {
         background-color: #e9f5f5;
         transform: scale(1.1);
+    }
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .wrapper {
+        min-width: 325px;
     }
 }

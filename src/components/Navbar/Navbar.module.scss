@@ -1,8 +1,9 @@
-// CSS lớn
+/* CSS chung */
 .wrapper {
     height: 60px;
 }
 
+/* CSS Container */
 .container {
     display: flex;
     align-items: center;
@@ -10,7 +11,7 @@
     padding: 10px 20px;
 }
 
-// CSS Left
+/* CSS Left */
 .left {
     display: flex;
     align-items: center;
@@ -38,7 +39,7 @@
     color: gray;
 }
 
-// CSS Center
+/* CSS Center */
 .center {
     text-align: center;
     flex: 1;
@@ -48,7 +49,7 @@
     font-weight: bold;
 }
 
-// CSS Right
+/* CSS Right */
 .right {
     display: flex;
     align-items: center;
@@ -60,4 +61,37 @@
     font-size: 1.4rem;
     margin-left: 25px;
     cursor: pointer;
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .wrapper {
+        height: 50px;
+    }
+
+    .container {
+        padding: 10px 0;
+    }
+
+    .language {
+        display: none;
+    }
+
+    .input {
+        width: 50px;
+    }
+
+    .logo {
+        font-size: 2.4rem;
+    }
+
+    .right {
+        flex: 2;
+        justify-content: center;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
 }

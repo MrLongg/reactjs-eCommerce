@@ -1,48 +1,39 @@
-// CSS Chung
-.wrapper {
-}
-
-// CSS Container
+/* CSS Container */
 .container {
     display: flex;
     padding: 50px;
 }
 
-// CSS Image container
 .img-container {
     flex: 1;
 }
 
-// CSS Image
 .img {
     width: 100%;
     height: 90vh;
     object-fit: cover;
 }
 
-// CSS Info container
+/* CSS Info container */
 .info-container {
     flex: 1;
     padding: 0 50px;
 }
 
-// CSS Title
 .title {
     font-weight: 200;
 }
 
-// CSS Description
 .description {
     margin: 20px 0;
 }
 
-// CSS Price
 .price {
     font-weight: 100;
     font-size: 4rem;
 }
 
-// CSS Filter-container
+/* CSS Filter-container */
 .filter-container {
     display: flex;
     justify-content: space-between;
@@ -50,19 +41,16 @@
     margin: 30px 0;
 }
 
-// CSS Filter
 .filter {
     display: flex;
     align-items: center;
 }
 
-// CSS filter title
 .filter-title {
     font-size: 2rem;
     font-weight: 200;
 }
 
-// CSS Filter color
 .filter-color {
     width: 20px;
     height: 20px;
@@ -83,13 +71,12 @@
     }
 }
 
-// CSS Filter size
 .filter-size {
     margin-left: 10px;
     padding: 5px;
 }
 
-// CSS Add container
+/* CSS Add container */
 .add-container {
     display: flex;
     align-items: center;
@@ -97,14 +84,12 @@
     width: 50%;
 }
 
-// CSS Amount container
 .amount-container {
     display: flex;
     align-items: center;
     font-weight: 700;
 }
 
-// CSS amount
 .amount {
     display: flex;
     width: 30px;
@@ -116,7 +101,6 @@
     margin: 0 5px;
 }
 
-// CSS Add product
 .add-product {
     padding: 10px;
     border: 1px solid teal;
@@ -126,5 +110,29 @@
 
     &:hover {
         background-color: #f8f4f4;
+    }
+}
+
+/* For mobile */
+@media only screen and (max-width: 380px) {
+    .container {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .img {
+        height: 40vh;
+    }
+
+    .info-container {
+        padding: 10px;
+    }
+
+    .filter-container {
+        width: 100%;
+    }
+
+    .add-container {
+        width: 100%;
     }
 }

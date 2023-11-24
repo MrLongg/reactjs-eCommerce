@@ -1,0 +1,120 @@
+// CSS Chung
+.wrapper {
+}
+
+// CSS container
+.container {
+    padding: 20px;
+}
+
+// CSS Title
+.title {
+    font-weight: 300;
+    text-align: center;
+}
+
+// CSS Top
+.top {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// CSS Top button
+.top-button {
+    padding: 10px;
+    font-weight: 600;
+    background-color: transparent;
+    cursor: pointer;
+
+    &.filled {
+        border: none;
+        background-color: black;
+        color: white;
+    }
+}
+
+// CSS Top texts
+.top-texts {
+}
+
+// CSS Top text
+.top-text {
+    margin: 0 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+// CSS Bottom
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+// CSS Info
+.info {
+    flex: 3;
+}
+
+// CSS Summary
+.summary {
+    flex: 1;
+}
+
+// CSS Product
+.product {
+    display: flex;
+    justify-content: space-between;
+}
+
+// CSS product detail
+.product-detail {
+    display: flex;
+    flex: 2;
+}
+
+// CSS product img
+.product-img {
+    width: 200px;
+}
+
+// CSS details
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+// CSS product name
+.product-name {
+}
+
+// CSS Product id
+.product-id {
+}
+
+// CSS Product color
+.product-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    &.black {
+        background-color: black;
+    }
+}
+
+// CSS product size
+.product-size {
+}
+
+// CSS Price detail
+.price-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}

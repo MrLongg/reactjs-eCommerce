@@ -38,9 +38,9 @@ const Pay = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-            }}
+            }}          
         >
-            <StripeCheckout
+            <StripeCheckout     
                 name="Long Shop"
                 image="https://yt3.ggpht.com/wWDqp5j3QmrwIDRCBn0t1cKPkGNKpe5q9E1U5vCVPxcIppPnOAwwjZ8z4DgrIIhWTDHSxKPdwA=s88-c-k-c0x00ffffff-no-rj"
                 billingAddress

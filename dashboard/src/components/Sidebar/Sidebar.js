@@ -31,7 +31,7 @@ function Sidebar() {
                 <div className={cx('menu')}>
                     <h3 className={cx('title')}>Quick Menu</h3>
                     <ul className={cx('list')}>
-                        <li className={cx('item', 'active')}>
+                        <li className={cx('item')}>
                             <FontAwesomeIcon className={cx('icon')} icon={faUser} />
                             Users
                         </li>
@@ -52,7 +52,7 @@ function Sidebar() {
                 <div className={cx('menu')}>
                     <h3 className={cx('title')}>Notifications</h3>
                     <ul className={cx('list')}>
-                        <li className={cx('item', 'active')}>
+                        <li className={cx('item')}>
                             <FontAwesomeIcon className={cx('icon')} icon={faEnvelope} />
                             Mail
                         </li>
@@ -69,7 +69,7 @@ function Sidebar() {
                 <div className={cx('menu')}>
                     <h3 className={cx('title')}>Staff</h3>
                     <ul className={cx('list')}>
-                        <li className={cx('item', 'active')}>
+                        <li className={cx('item')}>
                             <FontAwesomeIcon className={cx('icon')} icon={faSuitcase} />
                             Manage
                         </li>

@@ -7,6 +7,7 @@ import classNames from 'classnames/bind';
 import styles from './App.module.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import User from './pages/User/User';
+import NewUser from './pages/NewUser/NewUser';
 
 const cx = classNames.bind(styles);
 function App() {
@@ -19,6 +20,8 @@ function App() {
                     <Route path="/" element={<Home />} /> 
                     <Route path="/users" element={<UserList />} />
                     <Route path='/user/:userId' element={<User />} />
+                    <Route path='/newUser' element={<NewUser />} />
+
                 </Routes>
             </div>
         </Router>

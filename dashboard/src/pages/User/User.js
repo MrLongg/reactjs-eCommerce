@@ -3,6 +3,7 @@ import styles from './User.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfo, faLocationDot, faPhone, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar, faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -11,7 +12,9 @@ function User() {
         <div className={cx('wrapper')}>
             <div className={cx('title-container')}>
                 <h1 className={cx('title')}>Edit User</h1>
-                <button className={cx('button')}>Create</button>
+                <Link to="/newUser">
+                    <button className={cx('button')}>Create</button>
+                </Link>
             </div>
             <div className={cx('user-container')}>
                 <div className={cx('show')}>

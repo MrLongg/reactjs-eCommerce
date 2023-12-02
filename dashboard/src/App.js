@@ -1,20 +1,27 @@
 import Sidebar from './components/Sidebar/Sidebar';
 import Topbar from './components/Topbar/Topbar';
+import Home from './pages/Home/Home';
+import UserList from './pages/UserList/UserList';
 
 import classNames from 'classnames/bind';
 import styles from './App.module.scss';
-import Home from './pages/Home/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import User from './pages/User/User';
 
 const cx = classNames.bind(styles);
 function App() {
     return (
-        <div className="App">
+        <Router>
             <Topbar />
             <div className={cx('container')}>
                 <Sidebar />
-                <Home />
+                <Routes>
+                    <Route path="/" element={<Home />} /> 
+                    <Route path="/users" element={<UserList />} />
+                    <Route path='/user/:userId' element={<User />} />
+                </Routes>
             </div>
-        </div>
+        </Router>
     );
 }
 

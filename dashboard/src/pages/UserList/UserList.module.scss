@@ -1,0 +1,39 @@
+/* CSS Chung */
+.wrapper {
+    flex: 4;
+}
+
+/* Table */
+.table {
+    font-size: 1.3rem !important;
+}
+
+/* User */
+.list-user {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Edit */
+.edit {
+    padding: 5px 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: #3bb077;
+    border: none;
+    cursor: pointer;
+}
+
+.icon {
+    color: red;
+    cursor: pointer;
+}

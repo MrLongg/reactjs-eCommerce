@@ -8,6 +8,9 @@ import styles from './App.module.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import User from './pages/User/User';
 import NewUser from './pages/NewUser/NewUser';
+import ProductList from './pages/ProductList/ProductList';
+import Product from './pages/Product/Product';
+import NewProduct from './pages/NewProduct/NewProduct';
 
 const cx = classNames.bind(styles);
 function App() {
@@ -21,6 +24,9 @@ function App() {
                     <Route path="/users" element={<UserList />} />
                     <Route path='/user/:userId' element={<User />} />
                     <Route path='/newUser' element={<NewUser />} />
+                    <Route path='/products' element={<ProductList />} />
+                    <Route path='/product/:productId' element={<Product />} />
+                    <Route path='/newproduct' element={<NewProduct />} />
 
                 </Routes>
             </div>

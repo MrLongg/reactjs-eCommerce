@@ -1,17 +1,17 @@
 import classNames from 'classnames/bind';
-import styles from './UserList.module.scss';
+import styles from './ProductList.module.scss';
 import { DataGrid } from '@mui/x-data-grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import { userRows } from '../../dummyData';
+import { productRows } from '../../dummyData';
 
 const cx = classNames.bind(styles);
 
-function UserList() {
-    const [data, setData] = useState(userRows)
+function ProductList() {
+    const [data, setData] = useState(productRows)
     const handleDelete = (id) => {
         setData(data.filter((item) => item.id !== id))
     }
@@ -19,27 +19,27 @@ function UserList() {
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
         {
-            field: 'username',
-            headerName: 'Username',
+            field: 'product',
+            headerName: 'Product',
             width: 200,
             renderCell: (params) => {
                 return (
-                    <div className={cx('list-user')}>
-                        <img className={cx('img')} src={params.row.avatar} alt="" />
-                        {params.row.username}
+                    <div className={cx('list-product')}>
+                        <img className={cx('img')} src={params.row.img} alt="" />
+                        {params.row.name}
                     </div>
                 );
             },
         },
-        { field: 'email', headerName: 'Email', width: 200 },
+        { field: 'stock', headerName: 'Stock', width: 200 },
         {
             field: 'status',
             headerName: 'Status',
             width: 120,
         },
         {
-            field: 'transaction',
-            headerName: 'Transaction Volume',
+            field: 'price',
+            headerName: 'Price',
             width: 160,
         },
         {
@@ -49,7 +49,7 @@ function UserList() {
             renderCell: (params) => {
                 return (
                     <>
-                    <Link to={'/user/' + params.row.id}>
+                    <Link to={'/product/' + params.row.id}>
                     <button className={cx('edit')}>Edit</button>
                     </Link>
                     <FontAwesomeIcon className={cx('icon')} icon={faTrashCan} onClick={() => handleDelete(params.row.id)} />
@@ -75,7 +75,7 @@ function UserList() {
                 disableRowSelectionOnClick
             />
         </div>
-    );
+    )
 }
 
-export default UserList;
+export default ProductList

@@ -28,6 +28,7 @@
     height: 40px;
     border-radius: 50%;
     color: white;
+    cursor: pointer;
 
     &.facebook {
         background-color: #3b5999;
@@ -80,6 +81,10 @@
 
 .payment {
     width: 50%;
+}
+
+.icon {
+    margin-right: 10px;
 }
 
 /* For mobile */

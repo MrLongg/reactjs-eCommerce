@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './Slider.module.scss';
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import { sliderItems } from '../../data/Data';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -30,7 +31,7 @@ function Slider() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('arrow', 'arrow-left')} onClick={() => handleClick('left')}>
-                <ArrowLeftOutlined />
+                <FontAwesomeIcon icon={faArrowLeft} />
             </div>
             <div className={cx('container')} style={{ '--slideIndex': slideIndex }}>
                 {sliderItems.map((item) => (
@@ -47,7 +48,8 @@ function Slider() {
                 ))}
             </div>
             <div className={cx('arrow', 'arrow-right')} onClick={() => handleClick('right')}>
-                <ArrowRightOutlined />
+            <FontAwesomeIcon icon={faArrowRight} />
+
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ function Categories() {
     return (
         <div className={cx('wrapper')}>
             {categories.map((category) => (
-                <CategoryItem key={category.id} category={category} />
+                <CategoryItem key={category.id} item={category} />
             ))}
         </div>
     );

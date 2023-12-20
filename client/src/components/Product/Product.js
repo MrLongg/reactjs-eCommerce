@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Product.module.scss';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -13,9 +14,11 @@ function Product({ item }) {
                 <div className={cx('icon')}>
                     <ShoppingCartOutlined />
                 </div>
-                <div className={cx('icon')}>
-                    <SearchOutlined />
-                </div>
+                <Link to={`/product/${item._id}`}>
+                    <div className={cx('icon')}>
+                        <SearchOutlined />
+                    </div>
+                </Link>
                 <div className={cx('icon')}>
                     <FavoriteBorderOutlined />
                 </div>

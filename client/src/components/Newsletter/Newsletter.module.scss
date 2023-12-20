@@ -40,6 +40,11 @@
     border: none;
     background-color: teal;
     color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 128, 128, 0.8);
+    }
 }
 
 /* For mobile */

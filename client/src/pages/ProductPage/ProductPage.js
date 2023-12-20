@@ -5,42 +5,55 @@ import Announcement from '../../components/Annoucement/Announcement';
 import Newsletter from '../../components/Newsletter/Newsletter';
 import Footer from '../../components/Footer/Footer';
 import { Add, Remove } from '@mui/icons-material';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { publicRequest } from '../../requestMethod';
 
 const cx = classNames.bind(styles);
 
 function ProductPage() {
+    const location = useLocation();
+    const id = location.pathname.split('/')[2];
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const res = await publicRequest.get('/products/find/' + id);
+                setProduct(res.data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+        getProduct();
+    }, [id]);
+
     return (
         <div className={cx('wrapper')}>
             <Navbar />
             <Announcement />
             <div className={cx('container')}>
                 <div className={cx('img-container')}>
-                    <img className={cx('img')} src="https://i.ibb.co/S6qMxwr/jean.jpg" alt="" />
+                    <img className={cx('img')} src={product.img} alt="" />
                 </div>
                 <div className={cx('info-container')}>
-                    <h1 className={cx('title')}>Denim Jumpsuit</h1>
-                    <p className={cx('description')}>
-                        Duis reprehenderit velit quis quis non. Adipisicing ea minim ut voluptate amet ex ea proident
-                        velit adipisicing ullamco do Lorem veniam. Officia nostrud cillum aute aliqua ut excepteur
-                        consectetur labore deserunt ea velit. Mollit nulla eiusmod reprehenderit in. Mollit laboris
-                        exercitation ipsum quis commodo nisi eu velit ipsum nisi.
-                    </p>
-                    <span className={cx('price')}>$ 20</span>
+                    <h1 className={cx('title')}>{product.title}</h1>
+                    <p className={cx('description')}>{product.desc}</p>
+                    <span className={cx('price')}>$ {product.price}</span>
                     <div className={cx('filter-container')}>
                         <div className={cx('filter')}>
                             <span className={cx('filter-title')}>Color</span>
-                            <div className={cx('filter-color', 'black')}></div>
-                            <div className={cx('filter-color', 'darkblue')}></div>
-                            <div className={cx('filter-color', 'gray')}></div>
+                            {console.log(product.color)}
+                            {product.color && product.color.map((c) => (
+                                <div className={cx('filter-color', `${c}`)} key={c}></div>
+                            ))}
                         </div>
                         <div className={cx('filter')}>
                             <div className={cx('filter-title')}>Size</div>
                             <select className={cx('filter-size')}>
-                                <option className={cx('filter-size-option')}>XS</option>
-                                <option className={cx('filter-size-option')}>S</option>
-                                <option className={cx('filter-size-option')}>M</option>
-                                <option className={cx('filter-size-option')}>L</option>
-                                <option className={cx('filter-size-option')}>XL</option>
+                                {product.size && product.size.map((s) => (
+                                    <option className={cx('filter-size-option')} key={s}>{s}</option>
+                                ))}
                             </select>
                         </div>
                     </div>

@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
 import styles from './Newsletter.module.scss';
-import { Send } from '@mui/icons-material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +14,7 @@ function Newsletter() {
             <div className={cx('input-container')}>
                 <input className={cx('input')} placeholder="Your email..." />
                 <button className={cx('button')}>
-                    <Send />
+                    <FontAwesomeIcon icon={faPaperPlane} />
                 </button>
             </div>
         </div>

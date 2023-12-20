@@ -1,6 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
-import { Facebook, Instagram, MailOutline, Phone, Room, Twitter } from '@mui/icons-material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope} from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -17,13 +20,13 @@ function Footer() {
                 </p>
                 <div className={cx('social-media')}>
                     <div className={cx('social-icon', 'facebook')}>
-                        <Facebook />
+                        <FontAwesomeIcon icon={faFacebookF} />
                     </div>
                     <div className={cx('social-icon', 'twitter')}>
-                        <Twitter />
+                        <FontAwesomeIcon icon={faTwitter} />
                     </div>
                     <div className={cx('social-icon', 'instagram')}>
-                        <Instagram />
+                        <FontAwesomeIcon icon={faInstagram} />
                     </div>
                 </div>
             </div>
@@ -44,14 +47,16 @@ function Footer() {
             <div className={cx('right')}>
                 <h3 className={cx('title')}>Contact</h3>
                 <div className={cx('contact-item')}>
-                    <Room className={cx('contact-icon')} />
+                    <FontAwesomeIcon className={cx('icon')} icon={faLocationDot} />
                     622 Dixie Path, South Tobinchester 9823
                 </div>
                 <div className={cx('contact-item')}>
-                    <Phone className={cx('contact-icon')} /> +1 235 23 18
+                    <FontAwesomeIcon className={cx('icon')} icon={faPhone} />
+                    +1 235 23 18
                 </div>
                 <div className={cx('contact-item')}>
-                    <MailOutline className={cx('contact-icon')} /> contact@gmail.com
+                    <FontAwesomeIcon className={cx('icon')} icon={faEnvelope} />
+                    contact@gmail.com
                 </div>
                 <img className={cx('payment')} src="https://i.ibb.co/Qfvn4z6/payment.png" alt="" />
             </div>

@@ -4,10 +4,11 @@ import Navbar from '../../components/Navbar/Navbar';
 import Announcement from '../../components/Annoucement/Announcement';
 import Newsletter from '../../components/Newsletter/Newsletter';
 import Footer from '../../components/Footer/Footer';
-import { Add, Remove } from '@mui/icons-material';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { publicRequest } from '../../requestMethod';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -15,6 +16,9 @@ function ProductPage() {
     const location = useLocation();
     const id = location.pathname.split('/')[2];
     const [product, setProduct] = useState({});
+    const [quantity, setQuantity] = useState(1);
+    const [color, setColor] = useState('');
+    const [size, setSize] = useState('');
 
     useEffect(() => {
         const getProduct = async () => {
@@ -43,25 +47,42 @@ function ProductPage() {
                     <div className={cx('filter-container')}>
                         <div className={cx('filter')}>
                             <span className={cx('filter-title')}>Color</span>
+                            {product.color &&
+                                product.color.map((c) => (
+                                    <div
+                                        style={{backgroundColor: `${c}`}}
+                                        className={cx('filter-color')}
+                                        key={c}
+                                        onClick={() => setColor(c)}
+                                    ></div>
+                                ))}
                             {console.log(product.color)}
-                            {product.color && product.color.map((c) => (
-                                <div className={cx('filter-color', `${c}`)} key={c}></div>
-                            ))}
                         </div>
                         <div className={cx('filter')}>
                             <div className={cx('filter-title')}>Size</div>
-                            <select className={cx('filter-size')}>
-                                {product.size && product.size.map((s) => (
-                                    <option className={cx('filter-size-option')} key={s}>{s}</option>
-                                ))}
+                            <select className={cx('filter-size')} onChange={(e) => setSize(e.target.value)}>
+                                {product.size &&
+                                    product.size.map((s) => (
+                                        <option className={cx('filter-size-option')} key={s}>
+                                            {s}
+                                        </option>
+                                    ))}
                             </select>
                         </div>
                     </div>
                     <div className={cx('add-container')}>
                         <div className={cx('amount-container')}>
-                            <Remove />
-                            <span className={cx('amount')}>1</span>
-                            <Add />
+                            <FontAwesomeIcon
+                                icon={faMinus}
+                                className={cx('icon')}
+                                onClick={(e) => quantity > 1 && setQuantity(quantity - 1)}
+                            />
+                            <span className={cx('amount')}>{quantity}</span>
+                            <FontAwesomeIcon
+                                icon={faPlus}
+                                className={cx('icon')}
+                                onClick={(e) => setQuantity(quantity + 1)}
+                            />
                         </div>
                         <button className={cx('add-product')}>ADD TO CART</button>
                     </div>

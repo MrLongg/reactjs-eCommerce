@@ -3,11 +3,14 @@ import styles from './Cart.module.scss';
 import Navbar from '../../components/Navbar/Navbar';
 import Announcement from '../../components/Annoucement/Announcement';
 import Footer from '../../components/Footer/Footer';
-import { Add, Remove } from '@mui/icons-material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function Cart() {
+    const cart = useSelector((state) => state.cart);
     return (
         <div className={cx('wrapper')}>
             <Navbar />
@@ -24,73 +27,45 @@ function Cart() {
                 </div>
                 <div className={cx('bottom')}>
                     <div className={cx('info')}>
-                        <div className={cx('product')}>
-                            <div className={cx('product-detail')}>
-                                <img
-                                    className={cx('product-img')}
-                                    src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A"
-                                    alt=""
-                                />
-                                <div className={cx('details')}>
-                                    <span className={cx('product-name')}>
-                                        <b>Product:</b> JESSIE THUNDER SHOES
-                                    </span>
-                                    <span className={cx('product-id')}>
-                                        <b>ID:</b> 9823861235
-                                    </span>
-                                    <span className={cx('product-color', 'black')}></span>
-                                    <span className={cx('product-size')}>
-                                        <b>Size: </b> L
-                                    </span>
+                        {cart.products.map((product) => (
+                            <div className={cx('product')}>
+                                <div className={cx('product-detail')}>
+                                    <img className={cx('product-img')} src={product.img} alt="" />
+                                    <div className={cx('details')}>
+                                        <span className={cx('product-name')}>
+                                            <b>Product:</b> {product.title}
+                                        </span>
+                                        <span className={cx('product-id')}>
+                                            <b>ID:</b> {product._id}
+                                        </span>
+                                        <span
+                                            className={cx('product-color')}
+                                            style={{ backgroundColor: `${product.color}` }}
+                                        >
+                                            {product.color}
+                                        </span>
+                                        <span className={cx('product-size')}>
+                                            <b>Size: </b> {product.size}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className={cx('price-detail')}>
+                                    <div className={cx('product-amount-container')}>
+                                        <FontAwesomeIcon icon={faMinus} className={cx('icon')} />
+                                        <div className={cx('product-amount')}>{product.quantity}</div>
+                                        <FontAwesomeIcon icon={faPlus} className={cx('icon')} />
+                                    </div>
+                                    <div className={cx('product-prize')}>$ {product.price * product.quantity}</div>
                                 </div>
                             </div>
-                            <div className={cx('price-detail')}>
-                                <div className={cx('product-amount-container')}>
-                                    <Add />
-                                    <div className={cx('product-amount')}>2</div>
-                                    <Remove />
-                                </div>
-                                <div className={cx('product-prize')}>$ 30</div>
-                            </div>
-                        </div>
-
+                        ))}
                         <hr className={cx('break-line')} />
-
-                        <div className={cx('product')}>
-                            <div className={cx('product-detail')}>
-                                <img
-                                    className={cx('product-img')}
-                                    src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png"
-                                    alt=""
-                                />
-                                <div className={cx('details')}>
-                                    <span className={cx('product-name')}>
-                                        <b>Product:</b> HAKURA T-SHIRT
-                                    </span>
-                                    <span className={cx('product-id')}>
-                                        <b>ID:</b> 88748347123
-                                    </span>
-                                    <span className={cx('product-color', 'gray')}></span>
-                                    <span className={cx('product-size')}>
-                                        <b>Size: </b> M
-                                    </span>
-                                </div>
-                            </div>
-                            <div className={cx('price-detail')}>
-                                <div className={cx('product-amount-container')}>
-                                    <Add />
-                                    <div className={cx('product-amount')}>2</div>
-                                    <Remove />
-                                </div>
-                                <div className={cx('product-prize')}>$ 20</div>
-                            </div>
-                        </div>
                     </div>
                     <div className={cx('summary')}>
                         <h1 className={cx('summary-title')}>ORDER SUMMARY</h1>
                         <div className={cx('summary-item')}>
                             <span className={cx('summary-item-text')}>Subtotal</span>
-                            <span className={cx('summary-item-price')}>$ 80</span>
+                            <span className={cx('summary-item-price')}>$ {cart.total}</span>
                         </div>
                         <div className={cx('summary-item')}>
                             <span className={cx('summary-item-text')}>Estimated Shipping: </span>
@@ -102,7 +77,7 @@ function Cart() {
                         </div>
                         <div className={cx('summary-item', 'total')}>
                             <span className={cx('summary-item-text')}>Total</span>
-                            <span className={cx('summary-item-price')}>$ 80</span>
+                            <span className={cx('summary-item-price')}>$ {cart.total}</span>
                         </div>
                         <button className={cx('checkout-button')}>CHECKOUT NOW</button>
                     </div>

@@ -9,6 +9,9 @@ import { useEffect, useState } from 'react';
 import { publicRequest } from '../../requestMethod';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { addProduct } from '../../redux/cartRedux';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 const cx = classNames.bind(styles);
 
@@ -19,6 +22,7 @@ function ProductPage() {
     const [quantity, setQuantity] = useState(1);
     const [color, setColor] = useState('');
     const [size, setSize] = useState('');
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const getProduct = async () => {
@@ -31,6 +35,13 @@ function ProductPage() {
         };
         getProduct();
     }, [id]);
+
+    const handleClick = () => {
+        dispatch(addProduct({ ...product, quantity, color, size }));
+    };
+
+    const state = useSelector(state => state.cart)
+    console.log(state)
 
     return (
         <div className={cx('wrapper')}>
@@ -50,13 +61,12 @@ function ProductPage() {
                             {product.color &&
                                 product.color.map((c) => (
                                     <div
-                                        style={{backgroundColor: `${c}`}}
+                                        style={{ backgroundColor: `${c}` }}
                                         className={cx('filter-color')}
                                         key={c}
                                         onClick={() => setColor(c)}
                                     ></div>
                                 ))}
-                            {console.log(product.color)}
                         </div>
                         <div className={cx('filter')}>
                             <div className={cx('filter-title')}>Size</div>
@@ -75,16 +85,18 @@ function ProductPage() {
                             <FontAwesomeIcon
                                 icon={faMinus}
                                 className={cx('icon')}
-                                onClick={(e) => quantity > 1 && setQuantity(quantity - 1)}
+                                onClick={() => quantity > 1 && setQuantity(quantity - 1)}
                             />
                             <span className={cx('amount')}>{quantity}</span>
                             <FontAwesomeIcon
                                 icon={faPlus}
                                 className={cx('icon')}
-                                onClick={(e) => setQuantity(quantity + 1)}
+                                onClick={() => setQuantity(quantity + 1)}
                             />
                         </div>
-                        <button className={cx('add-product')}>ADD TO CART</button>
+                        <button className={cx('add-product')} onClick={handleClick}>
+                            ADD TO CART
+                        </button>
                     </div>
                 </div>
             </div>

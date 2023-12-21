@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import styles from './Products.module.scss';
-import { popularProducts } from '../../data/Data';
 import Product from '../Product/Product';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -47,8 +46,8 @@ function Products({ category, filter, sort }) {
     return (
         <div className={cx('wrapper')}>
             {category
-                ? filteredProducts.map((item) => <Product key={item.id} item={item} />)
-                : products.slice(0, 8).map((item) => <Product key={item.id} item={item} />)}
+                ? filteredProducts.map((item, index) => <Product key={index} item={item} />)
+                : products.slice(0, 8).map((item, index) => <Product key={index} item={item} />)}
         </div>
     );
 }

@@ -27,7 +27,7 @@ mongoose
 app.use(cors({
     origin: 'http://127.0.0.1:3000', // Cho phép truy cập từ origin cụ thể này
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Cho phép các phương thức HTTP mong muốn
-    allowedHeaders: ['Content-Type', 'Authorization'], // Cho phép các header cụ thể
+    allowedHeaders: ['Content-Type', 'Authorization', 'token'], // Cho phép các header cụ thể
 }));
 
 app.use(express.json());

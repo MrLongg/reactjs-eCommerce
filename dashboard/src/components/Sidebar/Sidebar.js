@@ -12,18 +12,20 @@ import {
     faTimeline,
 } from '@fortawesome/free-solid-svg-icons';
 import { faComment, faEnvelope, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+    const navigate = useNavigate()
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
                 <div className={cx('menu')}>
                     <h3 className={cx('title')}>Dashboard</h3>
                     <ul className={cx('list')}>
-                        <li className={cx('item', 'active')}>
+                        <li className={cx('item', 'active')} onClick={() => navigate('/')}>
                             <FontAwesomeIcon className={cx('icon')} icon={faBars} />
                             Home
                         </li>

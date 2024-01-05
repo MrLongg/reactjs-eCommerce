@@ -43,6 +43,7 @@ function ProductPage() {
     const state = useSelector(state => state.cart)
     console.log(state)
 
+
     return (
         <div className={cx('wrapper')}>
             <Navbar />

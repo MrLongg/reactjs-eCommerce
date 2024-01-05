@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const BASE_URL = 'http://127.0.0.1:5000/api/';
-const TOKEN =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjJjOGRmYTIxY2E0ZjljMmY5NTIwYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMzA2ODE5OSwiZXhwIjoxNzAzMzI3Mzk5fQ.Z-RWqmrvCcQskv00oNL0LjCFjTIf2JQ5FVjYLvK4N28';
+const TOKEN = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser.accessToken
+const STRIPE_SECRET_KEY = 'sk_test_51OGeuYLmhlSRINecIBmeJm6nyG7xRQb2kWLJcJFF7Sg0rILzVAUw0USywHhUMgVHJbmCwlGVKIN1UvIETdOPqxa600oglOnrBK'
 
 export const publicRequest = axios.create({
     baseURL: BASE_URL,
@@ -10,5 +10,8 @@ export const publicRequest = axios.create({
 
 export const userRequest = axios.create({
     baseURL: BASE_URL,
-    header: { token: `Bearer ${TOKEN}` },
+    headers: {
+        token: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${STRIPE_SECRET_KEY}`, // Thêm header Stripe
+    },
 });

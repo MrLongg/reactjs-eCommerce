@@ -13,18 +13,27 @@ function NewProduct() {
                     <input type="file" id="file" />
                 </div>
                 <div className={cx('item')}>
-                    <label>Name</label>
+                    <label>Title</label>
                     <input type="text" placeholder="Apple Airpods" />
                 </div>
                 <div className={cx('item')}>
-                    <label>Stock</label>
-                    <input type="text" placeholder="123" />
+                    <label>Categories</label>
+                    <input type="text" placeholder="jeans, male" />
                 </div>
                 <div className={cx('item')}>
-                    <label>Active</label>
-                    <select name="active" id="active">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                    <label>Price</label>
+                    <input type="text" placeholder="100" /> 
+                    {/* Nen de kieu number */}
+                </div>
+                <div className={cx('item')}>
+                    <label>Description</label>
+                    <input type="text" placeholder="Description" />
+                </div>
+                <div className={cx('item')}>
+                    <label>Stock</label>
+                    <select>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
                     </select>
                 </div>
                 <button className={cx('button')}>Create</button>

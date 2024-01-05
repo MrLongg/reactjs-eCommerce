@@ -4,20 +4,27 @@ import { DataGrid } from '@mui/x-data-grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { productRows } from '../../dummyData';
+import { deleteProduct, getProducts } from '../../redux/apiCalls';
 
 const cx = classNames.bind(styles);
 
 function ProductList() {
-    const [data, setData] = useState(productRows)
+    const dispatch = useDispatch();
+    const products = useSelector((state) => state.product.products);
+
     const handleDelete = (id) => {
-        setData(data.filter((item) => item.id !== id))
-    }
+        deleteProduct(id, dispatch)
+    };
+
+    useEffect(() => {
+        getProducts(dispatch);
+    }, [dispatch]);
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: '_id', headerName: 'ID', width: 220 },
         {
             field: 'product',
             headerName: 'Product',
@@ -26,17 +33,12 @@ function ProductList() {
                 return (
                     <div className={cx('list-product')}>
                         <img className={cx('img')} src={params.row.img} alt="" />
-                        {params.row.name}
+                        {params.row.title}
                     </div>
                 );
             },
         },
-        { field: 'stock', headerName: 'Stock', width: 200 },
-        {
-            field: 'status',
-            headerName: 'Status',
-            width: 120,
-        },
+        { field: 'inStock', headerName: 'Stock', width: 200 },
         {
             field: 'price',
             headerName: 'Price',
@@ -49,13 +51,17 @@ function ProductList() {
             renderCell: (params) => {
                 return (
                     <>
-                    <Link to={'/product/' + params.row.id}>
-                    <button className={cx('edit')}>Edit</button>
-                    </Link>
-                    <FontAwesomeIcon className={cx('icon')} icon={faTrashCan} onClick={() => handleDelete(params.row.id)} />
+                        <Link to={'/product/' + params.row._id}>
+                            <button className={cx('edit')}>Edit</button>
+                        </Link>
+                        <FontAwesomeIcon
+                            className={cx('icon')}
+                            icon={faTrashCan}
+                            onClick={() => handleDelete(params.row._id)}
+                        />
                     </>
-                    )
-            }
+                );
+            },
         },
     ];
 
@@ -63,8 +69,9 @@ function ProductList() {
         <div className={cx('wrapper')}>
             <DataGrid
                 className={cx('table')}
-                rows={data}
+                rows={products}
                 columns={columns}
+                getRowId={(row) => row._id}
                 initialState={{
                     pagination: {
                         paginationModel: { page: 0, pageSize: 5 },
@@ -75,7 +82,7 @@ function ProductList() {
                 disableRowSelectionOnClick
             />
         </div>
-    )
+    );
 }
 
-export default ProductList
+export default ProductList;

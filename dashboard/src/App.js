@@ -11,23 +11,30 @@ import NewUser from './pages/NewUser/NewUser';
 import ProductList from './pages/ProductList/ProductList';
 import Product from './pages/Product/Product';
 import NewProduct from './pages/NewProduct/NewProduct';
+import Login from './pages/Login/Login';
 
 const cx = classNames.bind(styles);
 function App() {
+    const isLogin = window.location.pathname === '/login';
+
     return (
         <Router>
-            <Topbar />
+            {!isLogin && <Topbar />}
+            <Routes>
+                <Route>
+                    <Route path="/login" element={<Login />} />
+                </Route>
+            </Routes>
             <div className={cx('container')}>
-                <Sidebar />
+                {!isLogin && <Sidebar />}
                 <Routes>
-                    <Route path="/" element={<Home />} /> 
+                    <Route path="/" element={<Home />} />
                     <Route path="/users" element={<UserList />} />
-                    <Route path='/user/:userId' element={<User />} />
-                    <Route path='/newUser' element={<NewUser />} />
-                    <Route path='/products' element={<ProductList />} />
-                    <Route path='/product/:productId' element={<Product />} />
-                    <Route path='/newproduct' element={<NewProduct />} />
-
+                    <Route path="/user/:userId" element={<User />} />
+                    <Route path="/newUser" element={<NewUser />} />
+                    <Route path="/products" element={<ProductList />} />
+                    <Route path="/product/:productId" element={<Product />} />
+                    <Route path="/newproduct" element={<NewProduct />} />
                 </Routes>
             </div>
         </Router>
